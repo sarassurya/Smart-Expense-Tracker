@@ -11,13 +11,10 @@ Features
 
 Files
 - `index.html` - Main UI
-- `css/styles.css` - Minimal custom styles
-- `js/script.js` - Application logic
+- `styles.css` - Minimal custom styles
+- `script.js` - Application logic
 
 How to run
-1. Open `index.html` in any modern browser.
+ Open `index.html` in any modern browser.
 
-Notes and next steps
-- Add validation and nicer currency formatting by locale.
-- Add CSV export/import and charts.
-- Add unit tests for core logic.
+
