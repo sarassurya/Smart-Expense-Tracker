@@ -1,0 +1,124 @@
+/* Minimal custom styles for Expense Tracker */
+body {
+  background-color: #DCDCDC;
+}
+.card-title {
+  font-weight: 600;
+}
+.table td, .table th {
+  vertical-align: middle;
+}
+.amount-positive {
+  color: #0f9d58; /* teal-ish */
+  font-weight: 700;
+}
+.amount-negative {
+  color: #d9534f; /* warm red */
+  font-weight: 700;
+}
+@media (max-width: 576px) {
+  .card .card-body { padding: 0.8rem; }
+}
+
+/* Interactive / micro-interaction styles */
+/* Card lift on hover */
+.card {
+  border: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(18, 38, 76, 0.12);
+}
+
+/* Buttons: subtle press and color transition */
+.btn {
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 180ms ease;
+}
+.btn:active {
+  transform: translateY(1px) scale(0.998);
+}
+.btn-primary {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  box-shadow: 0 8px 20px rgba(59,130,246,0.12);
+}
+.btn-primary:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+.btn-outline-primary {
+  border-color: rgba(59,130,246,0.18);
+  color: #2563eb;
+}
+.btn-outline-secondary:hover {
+  background-color: rgba(108,117,125,0.06);
+}
+
+/* Form inputs focus glow */
+input.form-control:focus, select.form-select:focus {
+  border-color: #7ab0ff;
+  box-shadow: 0 0 0 0.15rem rgba(122,176,255,0.18);
+}
+
+/* Transaction row entry animation */
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.table tbody tr {
+  animation: slideInUp 220ms ease both;
+}
+
+/* Hover highlight for rows and pointer for actions */
+.table tbody tr:hover {
+  background-color: rgba(13,110,253,0.03);
+}
+.table tbody tr .btn {
+  cursor: pointer;
+}
+
+/* Category badge for easier scanning */
+.badge-category {
+  display: inline-block;
+  padding: 0.28rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.78rem;
+  background: rgba(59,130,246,0.10);
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* Color variations for common categories */
+.badge-category[data-cat="Food"] { background: #fed7d7; color:#6b1212 }
+.badge-category[data-cat="Transport"] { background: #dbeafe; color:#1e3a8a }
+.badge-category[data-cat="Shopping"] { background: #fff7ed; color:#7c2d12 }
+.badge-category[data-cat="Salary"] { background: #ecfccb; color:#14532d }
+.badge-category[data-cat="Other"] { background: #eef2ff; color:#3730a3 }
+.badge-category[data-cat="General"] { background: rgba(59,130,246,0.08); color:#0f172a }
+
+/* Emphasize summary cards */
+#balance {
+  transition: color 180ms ease, transform 180ms ease;
+}
+#balance:hover { transform: scale(1.02); }
+
+/* Small responsive tweak for table on narrow screens */
+@media (max-width: 768px) {
+  .table thead { display: none; }
+  .table tbody tr { display: block; margin-bottom: 0.6rem; border-radius: 0.5rem; background: #fff; padding: 0.6rem; box-shadow: 0 6px 18px rgba(22,33,62,0.04); }
+  .table tbody tr td { display: flex; justify-content: space-between; padding: 0.35rem 0.5rem; }
+  .table tbody tr td:first-child { font-weight: 600; }
+}
+
+/* Small polish: adjust card body padding slightly for desktop */
+@media (min-width: 992px) {
+  .card .card-body { padding: 1.25rem; }
+}
+.footer{
+  color:#134a96;
+  text-align:center;
+  font-size:20px;
+  margin-top:25px;
+}
